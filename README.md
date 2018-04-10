@@ -8,7 +8,7 @@ Hovewer, dropping into the `cmd.exe` session from PowerShell/PowerShell ISE and 
 
 ## Dependencies
 
-* [wmic.exe](https://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/wmic.mspx) - comes with Windows XP Professional and up.
+* [wmic.exe](https://msdn.microsoft.com/en-us/library/aa394531.aspx) - comes with Windows XP Professional and up.
 
 ### Example:
 
