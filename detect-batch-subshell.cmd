@@ -24,7 +24,7 @@ for /f "tokens=2 delims==" %%i in (
     'wmic Process WHERE "Name='!CmdExeName!' AND CommandLine LIKE '%%!uid!%%'" GET ParentProcessID /value'
 ) do (
     rem Get commandline of parent
-    for /f "tokens=1,2,3" %%j in (
+    for /f "tokens=1,2,*" %%j in (
         'wmic Process WHERE "Handle='%%i'" GET CommandLine /value'
     ) do (
 
@@ -48,7 +48,7 @@ for /f "tokens=2 delims==" %%i in (
             )
 
             rem Check if we're running in cmd.exe with /c switch and this script path as argument
-            if !IsCmdParent!==1 if %%k==/c if !ParentScriptPath!==%ScriptPath% set IsExternal=1
+            if !IsCmdParent!==1 if %%k==/c if "!ParentScriptPath!"=="%ScriptPath%" set IsExternal=1
         )
     )
 )
